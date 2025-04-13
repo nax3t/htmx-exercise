@@ -1,17 +1,17 @@
-<h1>Filters</h1>
-<form id="filter-form" hx-get="/" hx-target="#posts" hx-swap="innerHTML">
-    <label for="tags">Tags:</label>
-    <select name="tags" id="tags" multiple>
+<h1 class="text-2xl font-bold mb-4">Filters</h1>
+<form id="filter-form" hx-get="/" hx-target="#posts" hx-swap="innerHTML" class="space-y-4">
+    <label for="tags" class="block text-sm font-medium text-gray-700">Tags:</label>
+    <select name="tags" id="tags" multiple class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
         <option value="new">New</option>
         <option value="old">Old</option>
         <option value="archived">Archived</option>
     </select>
-    <div class="grid">
+    <div class="grid grid-cols-2 gap-4">
         <div>
-            <button type="submit">Filter</button>
+            <button type="submit" class="w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600">Filter</button>
         </div>
         <div>
-            <button hx-get="/?clear=true" hx-target="#posts" hx-swap="innerHTML">Clear</button>
+            <button hx-get="/?clear=true" hx-target="#posts" hx-swap="innerHTML" class="w-full bg-red-500 text-white p-2 rounded-md hover:bg-red-600">Clear</button>
         </div>
     </div>
 </form>

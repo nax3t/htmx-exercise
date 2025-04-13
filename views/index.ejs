@@ -5,26 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Posts</title>
     <script src="https://unpkg.com/htmx.org@1.9.3"></script>
-    <link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body class="container">
-    <div class="grid">
-        <div>
-            <h1>Create a Post</h1>
+<body class="container mx-auto p-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="bg-white shadow-md rounded-lg p-4">
+            <h1 class="text-2xl font-bold mb-4">Create a Post</h1>
             <%- include('partials/new-post-form') %>
             
-            <h1>Posts</h1>
-            <div id="posts">
+            <h1 class="text-2xl font-bold mt-6">Posts</h1>
+            <div id="posts" class="mt-4">
                 <%- include('partials/posts', { posts: posts }) %>
             </div>
         </div>
-        <div>
+        <div class="bg-white shadow-md rounded-lg p-4">
             <%- include('partials/filter-form') %>
         </div>
     </div>
-
 </body>
 </html>
