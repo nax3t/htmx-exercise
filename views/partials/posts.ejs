@@ -1,6 +1,3 @@
 <% posts.forEach(function(post) { %>
-    <div class="post bg-white shadow-md rounded-lg p-4 mb-4">
-        <h2 class="text-xl font-semibold mb-2"><%= post.title %></h2>
-        <p class="text-gray-700"><%= post.body %></p>
-    </div>
+    <%- include('partials/post', { post: post }) %>
 <% }); %>
