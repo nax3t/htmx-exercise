@@ -1,0 +1,17 @@
+<h1>Filters</h1>
+<form id="filter-form" hx-get="/" hx-target="#posts" hx-swap="innerHTML">
+    <label for="tags">Tags:</label>
+    <select name="tags" id="tags" multiple>
+        <option value="new">New</option>
+        <option value="old">Old</option>
+        <option value="archived">Archived</option>
+    </select>
+    <div class="grid">
+        <div>
+            <button type="submit">Filter</button>
+        </div>
+        <div>
+            <button hx-get="/?clear=true" hx-target="#posts" hx-swap="innerHTML">Clear</button>
+        </div>
+    </div>
+</form>

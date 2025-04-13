@@ -1,0 +1,10 @@
+<form id="new-post-form" hx-post="/posts" hx-target="#posts" hx-swap="beforeend" hx-on="htmx:afterRequest: this.reset();">
+    <input type="text" name="title" placeholder="Post Title" required>
+    <textarea name="body" placeholder="Post Body" required></textarea>
+    <select name="tags" id="tags" multiple>
+        <option value="new">New</option>
+        <option value="old">Old</option>
+        <option value="archived">Archived</option>
+    </select>
+    <button type="submit">Add Post</button>
+</form>
