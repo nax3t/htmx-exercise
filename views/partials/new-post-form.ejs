@@ -1,8 +1,8 @@
 <form id="new-post-form" hx-post="/posts" hx-target="#posts" hx-swap="afterbegin" hx-on="htmx:afterRequest: this.reset(); closeModal();" class="space-y-4">
     <input type="text" name="title" placeholder="Post Title" required class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
     <textarea name="body" placeholder="Post Body" required class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
-    <select name="tags" id="tags" class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
-        <option value="new">New</option>
+    <select name="tag" id="tag" class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <option value="new" selected>New</option>
         <option value="old">Old</option>
         <option value="archived">Archived</option>
     </select>
