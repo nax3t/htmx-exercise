@@ -33,14 +33,15 @@ app.get('/', (req, res) => {
         template = 'partials/posts';
     }
     if (tags) {
-        let filteredPosts = posts;
+        let filteredPosts = [...posts];
         const selectedTags = Array.isArray(tags) ? tags : [tags]; // Ensure tags is an array
         filteredPosts = posts.filter(post => 
             selectedTags.every(tag => post.tags.includes(tag))
         );
 
-        // Render only the posts section if filtering
-        return res.render('partials/posts', { posts: filteredPosts });
+        filteredPostsSortDesc = filteredPosts.sort((a, b) => new Date(b.id) - new Date(a.id));
+
+        return res.render('partials/posts', { posts: filteredPostsSortDesc });
     }
 
     // Render the full index page if no filtering
