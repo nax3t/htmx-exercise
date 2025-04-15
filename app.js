@@ -44,8 +44,10 @@ app.get('/', (req, res) => {
         return res.render('partials/posts', { posts: filteredPostsSortDesc });
     }
 
-    // Render the full index page if no filtering
-    res.render(template, { posts });
+    const postsCopy = [...posts];
+    postsSortDesc = postsCopy.sort((a, b) => new Date(b.id) - new Date(a.id));
+
+    res.render(template, { posts: postsSortDesc });
 });
 
 app.post('/posts', (req, res) => {
