@@ -6,12 +6,22 @@
     <title>Posts</title>
     <script src="https://unpkg.com/htmx.org@1.9.3"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script>
+        function toggleModal() {
+            const modal = document.getElementById('newPostModal');
+            modal.classList.toggle('hidden');
+            if (!modal.classList.contains('hidden')) {
+                const titleInput = document.querySelector('#new-post-form input[name="title"]');
+                titleInput.focus();
+            }
+        }
+    </script>
 </head>
 <body class="container mx-auto p-4">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div class="bg-white shadow-md rounded-lg p-4">
             <h1 class="text-2xl font-bold mb-4">Create a Post</h1>
-            <%- include('partials/new-post-form') %>
+            <button onclick="toggleModal()" class="bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600">Open New Post Form</button>
             
             <h1 class="text-2xl font-bold mt-6">Posts</h1>
             <div id="posts" class="mt-4">
@@ -20,6 +30,15 @@
         </div>
         <div class="bg-white shadow-md rounded-lg p-4">
             <%- include('partials/filter-form') %>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="newPostModal" class="fixed inset-0 flex items-center justify-center bg-gray-800 hidden">
+        <div class="bg-white rounded-lg p-6 w-11/12 md:w-1/3">
+            <h2 class="text-xl font-semibold mb-4">New Post</h2>
+            <%- include('partials/new-post-form') %>
+            <button onclick="toggleModal()" class="mt-4 bg-red-500 text-white p-2 rounded-md hover:bg-red-600">Close</button>
         </div>
     </div>
 </body>
