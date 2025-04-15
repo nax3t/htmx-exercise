@@ -52,14 +52,9 @@ app.get('/', (req, res) => {
 
 app.post('/posts', (req, res) => {
     const { title, body, tags } = req.body;
-    posts.push({ title, body, tags });
-    res.render('partials/post', { post: { title, body, tags } });
-});
-
-app.post('/posts/delete/:index', (req, res) => {
-    const index = req.params.index;
-    posts.splice(index, 1);
-    res.redirect('/');
+    const newPost = { id: posts.length + 1, title, body, tags };
+    posts.push(newPost);
+    res.render('partials/post', { post: newPost });
 });
 
 // Start the server
