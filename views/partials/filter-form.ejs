@@ -11,7 +11,7 @@
             <button type="submit" class="w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600">Filter</button>
         </div>
         <div>
-            <button hx-get="/?clear=true" hx-target="#posts" hx-swap="innerHTML" class="w-full bg-red-500 text-white p-2 rounded-md hover:bg-red-600">Clear</button>
+            <button hx-get="/?clear=true" hx-target="#posts" hx-swap="innerHTML" hx-on::after-request="document.getElementById('filter-form').reset()" class="w-full bg-red-500 text-white p-2 rounded-md hover:bg-red-600">Clear</button>
         </div>
     </div>
 </form>
