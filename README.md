@@ -48,5 +48,3 @@ https://www.loom.com/share/adff9a62203a4497b8dd4a73f62a5686?sid=a7f4b081-850f-40
 
 4. Open your browser and navigate to `http://localhost:3000`.
 
-### TODO:
-- OOB-swap the filter form when clearing (or use JS to reset the form, TBD)
